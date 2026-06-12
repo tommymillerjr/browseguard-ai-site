@@ -1,20 +1,36 @@
 # BrowseGuard AI Privacy Policy
 
-Last updated: 2026-06-05
+Last updated: 2026-06-12
 
-BrowseGuard AI is a browser safety helper designed to help warn users about suspicious, scammy, or deceptive webpages while minimizing unnecessary data exposure.
-
-This privacy policy applies to the BrowseGuard AI Chrome extension beta.
 
 ## Summary
 
-BrowseGuard AI primarily uses local browser checks. Local BrowseGuard protection remains the controlling protection layer. AI Advisory output, when available, is informational and should not be treated as a guarantee that a page is safe or unsafe.
+BrowseGuard AI is designed to help warn users about suspicious, scammy, or deceptive webpages while minimizing unnecessary data exposure.
+
+The extension primarily uses local browser checks. Local BrowseGuard protection remains the controlling protection layer. AI Advisory output, when available, is optional and informational, does not control enforcement, and should not be treated as a guarantee that a page is safe or unsafe. Real AI/deception runtime is not the basis of the current beta package.
+
+Chrome may describe BrowseGuard AI as able to read and change data on websites because the extension needs page access to check links, forms, login fields, page text signals, URL patterns, and suspicious behavior while users browse. BrowseGuard AI performs local browser safety checks first and is designed not to collect passwords, form values, cookies, auth tokens, full page HTML, or raw private user-entered content. Optional AI Advisory features use minimized, sanitized risk metadata and do not control enforcement.
 
 ## What BrowseGuard AI does
 
-BrowseGuard AI checks webpages for risk signals such as suspicious wording, risky forms, possible impersonation patterns, and other scam or deception indicators.
+BrowseGuard AI checks webpages for risk signals such as suspicious wording, risky forms, possible impersonation patterns, and other scam/deception indicators.
 
-Depending on page risk level, BrowseGuard AI may show popup status information, warning overlays, interaction warnings, local scan history, trusted page or trusted site controls, and AI Advisory wording when enabled and available.
+Depending on the page risk level, BrowseGuard AI may:
+
+- show a popup status
+- show a warning overlay
+- warn before risky interactions
+- keep local scan history
+- allow the user to trust a page or site
+- show AI Advisory wording when enabled and available
+
+Current beta behavior is:
+
+- Low risk remains quiet by default, with visible-value popup copy.
+- Medium risk remains visible in popup, history, and Page Report, but is
+  non-interruptive by default.
+- High risk remains interruptive with warning overlays and Proceed Anyway
+  friction.
 
 ## Information processed locally
 
@@ -26,7 +42,7 @@ BrowseGuard AI may process the following information locally in the browser:
 - local page risk signals
 - whether forms, password fields, or suspicious terms are present
 - local risk score and risk level
-- trusted page or trusted site settings selected by the user
+- trusted page/site settings selected by the user
 - recent scan history and protection events
 
 This information is used to provide local page safety warnings and extension functionality.
@@ -50,7 +66,7 @@ This storage is used so the extension can remember user choices and show recent 
 
 AI Advisory features are optional and informational.
 
-When AI Advisory is disabled, BrowseGuard AI continues using local protection checks.
+When AI Advisory is disabled, BrowseGuard AI should continue using local protection checks.
 
 When AI Advisory is enabled, BrowseGuard AI is designed to send only a limited, sanitized payload for advisory review when applicable. The intended sanitized payload avoids unnecessary sensitive details and focuses on safety-relevant signals.
 
@@ -61,12 +77,13 @@ The current safety model is:
 - AI Advisory output should not lower local risk.
 - AI Advisory output should not suppress local warnings.
 - AI Advisory output should not override local blocking behavior.
+- Real AI/deception runtime is not the basis of the current beta package.
 
-## Backend and provider behavior
+## Backend/provider behavior
 
 BrowseGuard AI may support backend proxy mode for AI Advisory analysis.
 
-Provider access is intended to be controlled by the backend, not by bundling provider secrets inside the extension.
+The intended design is that provider access is controlled by the backend, not by bundling provider secrets inside the extension.
 
 The extension should not include private API keys or provider secrets in the packaged extension.
 
@@ -75,6 +92,11 @@ The extension should not include private API keys or provider secrets in the pac
 BrowseGuard AI is not intended to collect:
 
 - passwords
+- form values
+- cookies
+- auth tokens
+- full page HTML
+- raw private user-entered content
 - payment card numbers
 - bank account numbers
 - form field values entered by the user
@@ -83,19 +105,28 @@ BrowseGuard AI is not intended to collect:
 - unnecessary personal information
 - browser history outside the extension safety features
 
-BrowseGuard AI should not be used to enter sensitive information into suspicious pages for testing.
+BrowseGuard AI should not ask users to enter sensitive information into suspicious pages for testing.
+
+## Limited Use and data-use limits
+
+BrowseGuard AI uses page access and locally stored safety data only to provide
+browser safety features, user-selected trust choices, extension settings, and
+optional advisory diagnostics.
+
+BrowseGuard AI is designed not to sell, share, or use browsing safety data for
+advertising, unrelated profiling, or unrelated product purposes.
 
 ## Query strings and fragments
 
 BrowseGuard AI should avoid sending full query strings or hash fragments to advisory systems unless that behavior is explicitly reviewed and approved later.
 
-The safer default is to use limited hostname, path, and safety-signal information rather than full URLs containing unnecessary private details.
+The safer default is to use limited hostname/path and safety-signal information rather than full URLs containing unnecessary private details.
 
 ## Third-party services
 
-BrowseGuard AI may use a backend service for AI Advisory analysis if the user enables or configures that mode.
+BrowseGuard AI may use a backend service for AI Advisory analysis if the user enables/configures that mode.
 
-Any future third-party AI or provider use should be documented before public release, including what limited information is sent and why.
+Any future third-party AI/provider use should be documented before public release, including what limited information is sent and why.
 
 ## Tester safety
 
@@ -111,7 +142,7 @@ During beta testing:
 
 Users can clear local extension history and change extension settings through the extension UI where supported.
 
-Trusted page and trusted site settings are controlled by the user and are stored locally for extension behavior.
+Trusted page/site settings are controlled by the user and are stored locally for extension behavior.
 
 ## Children and sensitive use
 
@@ -128,3 +159,7 @@ Users should treat BrowseGuard AI as an additional safety helper, not as their o
 ## Contact
 
 For beta feedback or support, use the project feedback path provided with the beta tester materials.
+
+Project website: https://github.com/tommymillerjr/browseguard-ai-site
+
+Privacy policy URL: https://tommymillerjr.github.io/browseguard-ai-site/privacy-policy/
